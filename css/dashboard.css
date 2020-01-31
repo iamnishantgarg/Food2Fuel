@@ -3,3 +3,21 @@
     overflow-y: scroll;
     margin-bottom: 40px;
 }
+.card-redeem-container{
+    display:flex;
+    max-width:100%;
+    padding:20px;
+    align-items: center;
+    vertical-align: middle;
+}
+.credits-each-product{
+    flex:50%;
+    max-width:50%;
+    border-right: 2px solid #8888;
+    padding-bottom: 10%;
+}
+.redeem-now-option{
+    padding:10px;
+    flex:50%;
+    max-width:50%;
+}
