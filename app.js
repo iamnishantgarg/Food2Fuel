@@ -123,9 +123,11 @@ app.get("/order/:id", (req, res) => {
           user.credit = user.credit + order.credit;
           user.isActive = false;
           order.isActive = false;
-          user.save();
-          order.save();
-          return res.redirect("/admin");
+          user.save().then(() => {
+            order.save().then(() => {
+              return res.redirect("/admin");
+            });
+          });
         });
       } else {
         console.log("NO order found");
