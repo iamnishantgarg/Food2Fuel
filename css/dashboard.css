@@ -1,3 +1,29 @@
 .pastorders{
     margin-top:30px;
+    margin-bottom:30px;
+    padding:1%;
+}
+.ordercard{
+    display: flex;
+    max-width:100%;
+    text-align:center;
+    box-shadow: 10px 10px 8px #888888;
+}
+.card-credits{
+    box-sizing: border-box;
+    padding:1%;
+    flex:33%;
+    max-width:33%
+}
+.card-date{
+    box-sizing: border-box;
+    padding:1%;
+    flex:33%;
+    max-width:33%
+}
+.card-quantity{
+    box-sizing: border-box;
+    padding:1%;
+    flex:33%;
+    max-width:33%
 }
