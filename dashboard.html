@@ -14,7 +14,7 @@
   <!-- <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <!-- <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet"> -->
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <!-- <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
   <!-- <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"> -->
   <link href="css/style.css" rel="stylesheet">
@@ -30,14 +30,14 @@
         <div class="container-fluid">
     
           <div id="logo" class="pull-left">
-            <h1><a href="#intro" class="scrollto"><i class="fa fa-calendar-alt"></i>BizPage</a></h1>
+            <h1><a href="#intro" class="scrollto">BizPage</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+            <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></! --> 
           </div>
     
           <nav id="nav-menu-container">
             <ul class="nav-menu">
-              <li class="menu-active"><a href="#intro">Home</a></li>
+              <li ><a href="#intro">Home</a></li>
               <!-- <li><a href="#about">About Us</a></li>
               <li><a href="#services">Services</a></li> -->
               <!-- <li class="menu-has-children"><a href="">Drop Down</a>
@@ -52,44 +52,25 @@
             </ul>
           </nav>
         </div>
-      </header><!-- #header -->
-      <section id="intro">
-        <div class="intro-container">
-          <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
-    
-            <!-- <ol class="carousel-indicators"></ol> -->
-    
-            <div class="carousel-inner" role="listbox">
-    
-              <div class="carousel-item active">
-                <div class="carousel-background"><img src="img/intro-carousel/1.jpg" alt=""></div>
-                <div class="carousel-container">
-                  <div class="carousel-content">
-                    <h2>Welcome Partners!!</h2>
-                    <p>Here you can see your past orders and credits that you had earned while caring for the environment</p>
-                    <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
-                  </div>
-                </div>
-              </div>
-    
-             
-            </div>
-    
-          </div>
-        </div>
-      </section>   
+      </header>   
+
       
-      <section class="pastorders">
+      <header class="container heading section-header">
+        <h3>Welcome Partners!!</h3>
+        </header>
+      
+
+      <!-- <section class="pastorders">
           <div class="container">
             <header class="section-header">
                 <h3><span class="oi oi-icon-name" title="icon name" aria-hidden="true"></span>Previous Pickups</h3>
                 </header>
 
                 <div class="ordercard">
-                    <div class="card-date">
+                    <div class="card-date"> -->
                         <!-- <i class="fa fa-calendar-alt" style="background: red;font-size: 1rem;">hj</i>  -->
                         <!-- <span class="oi oi-calendar"></span> -->
-                        <span class="oi" class="font-size:10px; height:20px; width:20px;" data-glyph="calendar"></span>
+                        <!-- <span class="oi" class="font-size:10px; height:20px; width:20px;" data-glyph="calendar"></span>
                         24oct 1998
                     </div>
                     <div class="card-credits">
@@ -103,7 +84,107 @@
 
           </div>
       </section>
-      <i class="far fa-calendar-alt"></i> 
+      <i class="far fa-calendar-alt"></i>  -->
+      <section id="about">
+        <div class="container">
+  
+          <div class="row about-cols">
+  
+            <div class="col-md-4 wow fadeInUp">
+              <div class="about-col">
+                <div class="img">
+                  <img src="" alt="" class="img-fluid">
+                  <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                </div>
+                <h2 class="title"><a href="#">Credits Earned</a></h2>
+                <h1 class="text-center">
+                    <span  data-toggle="counter-up">765</span>
+                </h1>
+              </div>
+            </div>
+  
+            <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="about-col">
+                <div class="img">
+                  <img src="" alt="" class="img-fluid">
+                  <div class="icon"><i class="ion-ios-list-outline"></i></div>
+                </div>
+                <h2 class="title"><a href="#">Next Pickup</a></h2>
+                <!-- write here -->
+                <h1 class="text-center">
+                    24 October 2014
+                </h1>
+              </div>
+            </div>
+  
+            <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+              <div class="text-center about-col">
+                <div class="img">
+                  <img src="" alt="" class="img-fluid">
+                  <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+                </div>
+                <h2 class="title"><a href="#">Our Vision</a></h2>
+                <!-- write here -->
+                <p class="text-center">Don't want to contribute anymore??</p>
+                
+                <a href="#">Unsubscribe </a>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section>
+
+      <section class="previous-pickups">
+          <div class="container previous-pickups-container">
+              <div class="previous-pickup-table">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+          </div>
+      </section>
+
 
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/jquery/jquery-migrate.min.js"></script>

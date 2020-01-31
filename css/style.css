@@ -133,10 +133,11 @@ h6 {
   right: 0;
   transition: all 0.5s;
   z-index: 997;
+  background-color: #18d26e;
 }
 
 #header.header-scrolled {
-  background: rgba(0, 0, 0, 0.9);
+  background: #18d26e;
   padding: 20px 0;
   height: 72px;
   transition: all 0.5s;
@@ -373,6 +374,7 @@ h6 {
 #nav-menu-container {
   float: right;
   margin: 0;
+  background-color: #18d26e;
 }
 
 /* Nav Meu Styling */
