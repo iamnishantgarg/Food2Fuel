@@ -1,4 +1,5 @@
 const User = require("../models/User");
+const Order = require("../models/Order");
 exports.getSignin = (req, res, next) => {
   return res.redirect("/rest/dashboard");
 };
@@ -17,6 +18,8 @@ exports.postSignup = (req, res, next) => {
       console.log("error in findng user" + err);
       return;
     }
+    var today = new Date();
+    // console.log(today);
     if (!user) {
       User.create(
         {
@@ -26,7 +29,8 @@ exports.postSignup = (req, res, next) => {
           password,
           credit: 0,
           orders: [],
-          phone
+          phone,
+          date: today
         },
         (err, usr) => {
           if (err) {
@@ -41,5 +45,11 @@ exports.postSignup = (req, res, next) => {
   });
 };
 exports.getDashboard = (req, res, next) => {
-  return res.render("dashboard");
+  Order.find({ user: req.user, isActive: false }, (err, orders) => {
+    if (err) {
+      console.log(err);
+    } else {
+      return res.render("dashboard", { orders });
+    }
+  });
 };

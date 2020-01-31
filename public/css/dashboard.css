@@ -1,5 +1,13 @@
-.previous-pickups-container{
-    max-height: 300px;
-    overflow-y: scroll;
-    margin-bottom: 40px;
+.previous-pickups-container {
+  max-height: 300px;
+  overflow-y: scroll;
+  margin-bottom: 40px;
+}
+.subBtn {
+  width: 99%;
+  height: 40px;
+  background: rgb(3, 221, 3);
+  border: none;
+  border-radius: 0px;
+  color: white;
 }

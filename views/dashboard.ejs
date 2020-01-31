@@ -79,7 +79,7 @@
               </div>
               <h2 class="title"><a href="#">Credits Earned</a></h2>
               <h1 class="text-center">
-                <span data-toggle="counter-up">765</span>
+                <span data-toggle="counter-up"><%= user.credit %></span>
               </h1>
             </div>
           </div>
@@ -93,7 +93,19 @@
               <h2 class="title"><a href="#">Next Pickup</a></h2>
               <!-- write here -->
               <h1 class="text-center">
-                24 October 2014
+                <%= user.date.toString().substring(0,11) %> <%
+                if(user.isActive==false){ %>
+                <form action="/order" method="POST">
+                  <input
+                    type="number"
+                    name="quantity"
+                    min="0"
+                    id=""
+                    style="width: 90%; margin:auto;"
+                  />
+                  <button class="btnSubmit">Submit</button>
+                </form>
+                <% } %>
               </h1>
             </div>
           </div>
@@ -122,42 +134,20 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Date</th>
+
                 <th scope="col">Credits Earned</th>
                 <th scope="col">Capacity Transported</th>
               </tr>
             </thead>
             <tbody>
+              <% for(let i=orders.length-1; i>=0; i--){ %>
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row"><%= orders.length-i %></th>
+                <td><%= orders[i].credit %></td>
+
+                <td><%= orders[i].quantity %></td>
               </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              <% } %>
             </tbody>
           </table>
         </div>

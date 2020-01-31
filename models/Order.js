@@ -9,9 +9,10 @@ const orderSchema = new mongoose.Schema(
       type: Number,
       default: 0
     },
-    rest: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
+    isActive: { type: Boolean, default: true }
   },
   { timestamps: true }
 );
 
-mongoose.exports = mongoose.model("Order", orderSchema);
+module.exports = mongoose.model("order", orderSchema);
