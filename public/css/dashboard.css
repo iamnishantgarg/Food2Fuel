@@ -1,0 +1,5 @@
+.previous-pickups-container{
+    max-height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 40px;
+}

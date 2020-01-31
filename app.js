@@ -71,7 +71,7 @@ app.use("/rest", restRouter);
 //   (req, res) => {}
 // );
 app.use("/", (req, res) => {
-  return res.send("hello from server");
+  return res.render("index");
 });
 mongoose.connect(
   keys.MONGOURI,
