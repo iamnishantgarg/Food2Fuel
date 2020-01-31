@@ -8,26 +8,29 @@
   <meta content="" name="description">
   <!-- change this favicon -->
     <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <!-- <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet"> -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <!-- <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet"> -->
+  <!-- <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
+  <!-- <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"> -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/dashboard.css" rel="stylesheet">
-  <!-- <script src="https://use.fontawesome.com/e2eea6562c.js"></script> -->
+  <script src="https://use.fontawesome.com/e2eea6562c.js"></script>
+  <link href="/open-iconic/font/css/open-iconic.css" rel="stylesheet">
+  <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 </head>
 
 <body>
+    
     <header id="header">
         <div class="container-fluid">
     
           <div id="logo" class="pull-left">
-            <h1><a href="#intro" class="scrollto">BizPage</a></h1>
+            <h1><a href="#intro" class="scrollto"><i class="fa fa-calendar-alt"></i>BizPage</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
           </div>
@@ -79,16 +82,18 @@
       <section class="pastorders">
           <div class="container">
             <header class="section-header">
-                <h3>Previous Pickups</h3>
+                <h3><span class="oi oi-icon-name" title="icon name" aria-hidden="true"></span>Previous Pickups</h3>
                 </header>
 
                 <div class="ordercard">
                     <div class="card-date">
-                        <i class="fa fa-calendar-alt"></i> 
+                        <!-- <i class="fa fa-calendar-alt" style="background: red;font-size: 1rem;">hj</i>  -->
+                        <!-- <span class="oi oi-calendar"></span> -->
+                        <span class="oi" class="font-size:10px; height:20px; width:20px;" data-glyph="calendar"></span>
                         24oct 1998
                     </div>
                     <div class="card-credits">
-                        <i class="fa fa-clipboard-list-check"></i>
+                        <i class="fas fa-calendar-alt"></i>
                         8888
                     </div>
                     <div class="card-quantity">
@@ -98,7 +103,7 @@
 
           </div>
       </section>
-
+      <i class="far fa-calendar-alt"></i> 
 
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/jquery/jquery-migrate.min.js"></script>
