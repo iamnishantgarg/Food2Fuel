@@ -51,14 +51,14 @@
         <nav id="nav-menu-container">
           <ul class="nav-menu">
             <li><a href="#intro">Home</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/logout">Logout</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <header class="container heading section-header">
-      <h3>Welcome Partners!!</h3>
+      <h3>Welcome <%=user.name%></h3>
     </header>
     <div style="margin : 100px 0">
       <header class="section-header">
@@ -120,7 +120,7 @@
               <!-- write here -->
               Don't want to contribute to greener future anymore??
 
-              <a href="#"> Unsubscribe </a>
+              <a href="rest/unsubscribe"> Unsubscribe </a>
             </div>
           </div>
         </div>
