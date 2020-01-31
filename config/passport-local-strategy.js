@@ -1,6 +1,6 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const User = require("../models/rest");
+const User = require("../models/User");
 
 // auth using passport
 passport.use(
@@ -9,34 +9,34 @@ passport.use(
       usernameField: "email"
     },
     (email, password, done) => {
-      Rest.findOne({ email: email }, (err, rest) => {
+      User.findOne({ email: email }, (err, user) => {
         if (err) {
           console.log("error in finding user" + err);
           return done(err);
         }
-        if (!rest || rest.password != password) {
+        if (!user || user.password != password) {
           console.log("invalid username/password");
           return done(null, false);
         }
-        return done(null, rest);
+        return done(null, user);
       });
     }
   )
 );
 
 // serialize user to define cookie
-passport.serializeUser((rest, done) => {
-  done(null, rest.id);
+passport.serializeUser((user, done) => {
+  done(null, user.id);
 });
 
 // deserializeUser here
 passport.deserializeUser((id, done) => {
-  User.findById(id, (err, rest) => {
+  User.findById(id, (err, user) => {
     if (err) {
       console.log("error in finding user passport-->");
       return done(err);
     }
-    return done(null, rest);
+    return done(null, user);
   });
 });
 
