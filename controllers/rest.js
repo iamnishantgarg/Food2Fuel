@@ -30,7 +30,8 @@ exports.postSignup = (req, res, next) => {
           credit: 0,
           orders: [],
           phone,
-          date: today
+          date: today,
+          
         },
         (err, usr) => {
           if (err) {
