@@ -117,7 +117,8 @@ app.post("/order", async (req, res) => {
   });
 });
 
-app.get("/admin", (req, res) => {
+app.get("/admin", Authenticator.checkAdmin, (req, res) => {
+  
   Order.find({ isActive: true })
     .populate("user")
     .exec((err, orders) => {

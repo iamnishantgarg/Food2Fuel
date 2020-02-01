@@ -12,7 +12,8 @@ var restSchema = new mongoose.Schema({
   orders: [{ type: mongoose.Schema.Types.ObjectId, ref: "order" }],
   credit: { type: Number, default: 0 },
   date: { type: Date },
-  isActive: { type: Boolean, default: false }
+  isActive: { type: Boolean, default: false },
+  isAdmin : {type: Boolean , default : false }
 });
 // restSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model("user", restSchema);

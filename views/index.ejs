@@ -54,6 +54,11 @@
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="#intro">Home</a></li>
                     <li><a href="#about">About Us</a></li>
+                    <%if(locals.user){%>
+                    <li><a href="/rest/dashboard">Dashboard</a></li>
+                    <% } else {%>
+                        <li><a href="#call-to-action">Register</a></li>
+                    <%}%>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -126,7 +131,7 @@
                         <div class="about-col">
                             <div class="img">
                                 <img src="/img/about-mission.jpg" alt="" class="img-fluid">
-                                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                                <div class="icon"><i class="ion-ios-help"></i></div>
                             </div>
                             <h2 class="title"><a >Problems caused by UCO</a></h2>
                             <p>
@@ -188,7 +193,7 @@
                     <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
                         <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
                         <h4 class="title"><a href="">Recycle</a></h4>
-                        
+
                         <p class="description">We collect the waste from and contribute towards a greener future by giving them to the industries for recycling it.</p>
                     </div>
                     <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
@@ -202,6 +207,7 @@
             </div>
         </section>
 
+        <% if(locals.user != true){ %>
         <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
                 <h3>Be Our Patners..</h3>
@@ -209,6 +215,7 @@
                 <a class="cta-btn" href="/rest/register">Register</a>
             </div>
         </section>
+        <% } %>
 
         <section id="contact" class="section-bg wow fadeInUp">
             <div class="container">
