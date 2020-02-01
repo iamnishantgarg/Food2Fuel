@@ -73,6 +73,24 @@ app.use("/rest", restRouter);
 //   (req, res) => {}
 // );
 
+app.get("/logout", (req,res)=>{
+  req.logout();
+  res.redirect("/rest/register")
+})
+app.get("/products", (req,res)=>{
+  res.render("products")
+})
+app.get("/unsubscribe", (req,res)=>{
+  User.findOneAndRemove({_id: req.user._id}, (err)=>{
+    if(err){
+      console.log(err);
+      res.redirect("/rest/register")
+    }else{
+      res.redirect("/");
+    }
+  })
+})
+
 app.post("/order", async (req, res) => {
   User.findById(req.user.id, (err, user) => {
     // console.log(user);

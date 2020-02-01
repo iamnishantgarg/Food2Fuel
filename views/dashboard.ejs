@@ -6,18 +6,11 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
-    <!-- change this favicon -->
-    <link href="/img/logo.png" rel="icon" />
-    <!-- <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet"> -->
-    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <link href="/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="/img/logo.png" rel="icon" /><link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" /><link href="/lib/animate/animate.min.css" rel="stylesheet" />
     <link href="/lib/ionicons/css/ionicons.min.css" rel="stylesheet" />
-    <!-- <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
-    <!-- <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/css/signup.css">
     <link href="/css/style.css" rel="stylesheet" />
+
     <link href="/css/dashboard.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/e2eea6562c.js"></script>
     <link href="/open-iconic/font/css/open-iconic.css" rel="stylesheet" />
@@ -27,8 +20,6 @@
     <header id="header" style="box-shadow: 0px 2px 6px #888;">
       <div class="container-fluid">
         <div id="logo" class="pull-left pb-5">
-          <!-- Uncomment below if you prefer to use an image logo -->
-          <!-- <a href="#intro"><img height="50px;" src="img/logo.png" alt="Hackathon" title="Hackathon"/></a>  -->
           <h1 style=" display: inline;">
             <a style="color:white;" href="#intro" class="scrollto"
               >F<span
@@ -50,15 +41,16 @@
 
         <nav id="nav-menu-container">
           <ul class="nav-menu">
-            <li><a href="#intro">Home</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Redeem</a></li>
+            <li><a href="/logout">Logout</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <header class="container heading section-header">
-      <h3>Welcome Partners!!</h3>
+      <h3>Welcome <%=user.name%></h3>
     </header>
     <div style="margin : 100px 0">
       <header class="section-header">
@@ -91,19 +83,23 @@
                 <div class="icon"><i class="ion-ios-list-outline"></i></div>
               </div>
               <h2 class="title"><a href="#">Next Pickup</a></h2>
-              <!-- write here -->
-              <h1 class="text-center">
+             <h1 class="text-center">
                 <%= user.date.toString().substring(0,11) %> <%
                 if(user.isActive==false){ %>
                 <form action="/order" method="POST">
+                  <% if(user.isActive==false){ %>
                   <input
+
                     type="number"
                     name="quantity"
                     min="0"
                     id=""
-                    style="width: 90%; margin:auto;"
+                    placeholder="Quantity in Litres"
+
+                    style="width: 90%; height: 40px; margin:auto; font-size: 1.3rem;"
                   />
-                  <button class="btnSubmit">Submit</button>
+                    <% } %>
+                  <button class="subBtn" style="width: 90%; font-size: 1.5rem;">Submit</button>
                 </form>
                 <% } %>
               </h1>
@@ -116,11 +112,10 @@
                 <img src="" alt="" class="img-fluid" />
                 <div class="icon"><i class="ion-ios-eye-outline"></i></div>
               </div>
-              <h2 class="title"><a href="#">Unsubscribe</a></h2>
-              <!-- write here -->
+              <h2 class="title"><a href="/unsubscribe">Unsubscribe</a></h2>
               Don't want to contribute to greener future anymore??
 
-              <a href="#"> Unsubscribe </a>
+              <a href="/unsubscribe"> Unsubscribe </a>
             </div>
           </div>
         </div>
