@@ -105,8 +105,10 @@ app.post("/order", (req, res) => {
           user.date = new Date().getTime() + 604800000;
           user.isActive = true;
           user.orders.push(order);
-          user.save();
-          res.redirect("/rest/dashboard");
+          user.save().then(()=>{
+            res.redirect("/rest/dashboard");
+          });
+          
         })
         .catch(err => {
           console.log(err);
