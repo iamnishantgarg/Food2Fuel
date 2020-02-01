@@ -91,7 +91,7 @@ app.get("/unsubscribe", (req,res)=>{
   })
 })
 
-app.post("/order", async (req, res) => {
+app.post("/order", (req, res) => {
   User.findById(req.user.id, (err, user) => {
     // console.log(user);
     if (user) {
@@ -103,11 +103,9 @@ app.post("/order", async (req, res) => {
         .then(order => {
           console.log(req.body);
           user.date = new Date().getTime() + 604800000;
-
           user.isActive = true;
           user.orders.push(order);
           user.save();
-
           res.redirect("/rest/dashboard");
         })
         .catch(err => {
@@ -125,6 +123,11 @@ app.get("/admin", Authenticator.checkAdmin, (req, res) => {
       console.log(orders);
       res.render("admin", { orders });
     });
+});
+
+app.get("/logout", (req, res) => {
+  req.logOut();
+  res.redirect("/rest/register");
 });
 
 app.get("/order/:id", (req, res) => {
@@ -155,7 +158,16 @@ app.get("/order/:id", (req, res) => {
     }
   });
 });
-
+app.get("/rest/unsubscribe", (req, res) => {
+  User.findById(req.user, (err, user) => {
+    if (user) {
+      user.remove();
+      return res.redirect("/rest/register");
+    } else {
+      return res.redirect("/rest/dashboard");
+    }
+  });
+});
 app.use("/", (req, res) => {
   return res.render("index");
 });
